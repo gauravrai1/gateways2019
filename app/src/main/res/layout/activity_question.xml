@@ -40,7 +40,8 @@
                 android:layout_height="match_parent"/>
 
             <LinearLayout
-                android:layout_marginTop="30dp"
+                android:visibility="visible"
+                android:layout_marginTop="80dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -52,7 +53,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:elevation="3dp"
@@ -63,7 +64,7 @@
                         android:text="Happy"
                         android:textColor="@color/white"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -75,11 +76,11 @@
                         android:background="@drawable/button_round_green"
                         android:text="Okay"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="30dp"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/button_round_blue"
                         android:elevation="3dp"
@@ -98,7 +99,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:elevation="3dp"
@@ -109,7 +110,7 @@
                         android:text="Excited"
                         android:textColor="@color/white"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -121,7 +122,7 @@
                         android:background="@drawable/button_round_blue"
                         android:text="Afraid"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -133,7 +134,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:elevation="3dp"
@@ -144,7 +145,7 @@
                         android:text="Loving"
                         android:textColor="@color/white"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -156,11 +157,11 @@
                         android:background="@drawable/button_round_green"
                         android:text="Calm"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="30dp"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/button_round_blue"
                         android:elevation="3dp"
@@ -179,7 +180,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:elevation="3dp"
@@ -190,7 +191,7 @@
                         android:text="Confident"
                         android:textColor="@color/white"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -202,7 +203,7 @@
                         android:background="@drawable/button_round_blue"
                         android:text="Tired"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                 </LinearLayout>
 
@@ -214,7 +215,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="50dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:elevation="3dp"
@@ -225,7 +226,7 @@
                         android:text="Guilty"
                         android:textColor="@color/white"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -237,11 +238,11 @@
                         android:background="@drawable/button_round_blue"
                         android:text="Sad"
                         android:layout_width="80dp"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="30dp"/>
 
                     <TextView
                         android:layout_width="100dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="30dp"
                         android:layout_marginStart="10dp"
                         android:background="@drawable/button_round_blue"
                         android:elevation="3dp"
@@ -254,8 +255,318 @@
 
             </LinearLayout>
 
+            <TextView
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/question2"
+                android:text="How _____ are you feeling "
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <SeekBar
+                android:visibility="visible"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/seekBar"
+                android:max="100"
+                android:progress="50"
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/question3"
+                android:text="Let’s understand what could be influencing your this behaviour ?"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_orange"
+                        android:text="Work"
+                        android:textColor="@color/white"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:elevation="3dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/button_round_green"
+                        android:text="College"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_round_blue"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Friends"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_orange"
+                        android:text="Social Media"
+                        android:textColor="@color/white"
+                        android:layout_width="110dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:elevation="3dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/button_round_blue"
+                        android:text="Family"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_orange"
+                        android:text="Health"
+                        android:textColor="@color/white"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:elevation="3dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/button_round_green"
+                        android:text="Sex"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_round_blue"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Stress"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_green"
+                        android:text="Bad Sleep"
+                        android:textColor="@color/white"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:elevation="3dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/button_round_blue"
+                        android:text="Partner"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/question4"
+                android:text="Do you like to be around people or prefer being alone ?"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:layout_marginTop="80dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_orange"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:elevation="3dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/button_round_green"
+                        android:text="No"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:elevation="3dp"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:background="@drawable/button_round_orange"
+                        android:text="Yes Sometimes"
+                        android:textColor="@color/white"
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="25dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:id="@+id/question5"
+                android:text="Do you fear that you will be negatively judged by others in social situations ?"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
         </LinearLayout>
 
     </ScrollView>
+
+    <TextView
+        android:alpha="0.5"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_round"
+        android:text="Next"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
