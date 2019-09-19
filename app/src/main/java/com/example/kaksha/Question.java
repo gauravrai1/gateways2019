@@ -35,18 +35,60 @@ public class Question extends AppCompatActivity {
 
         setViews();
 
-        a2.setVisibility(View.GONE);
-        a3.setVisibility(View.GONE);
-        a4.setVisibility(View.GONE);
-        a5.setVisibility(View.GONE);
-        a6.setVisibility(View.GONE);
-        q2.setVisibility(View.GONE);
-        q3.setVisibility(View.GONE);
-        q4.setVisibility(View.GONE);
-        q5.setVisibility(View.GONE);
-        q6.setVisibility(View.GONE);
+//        a2.setVisibility(View.GONE);
+//        a3.setVisibility(View.GONE);
+//        a4.setVisibility(View.GONE);
+//        a5.setVisibility(View.GONE);
+//        a6.setVisibility(View.GONE);
+//        q2.setVisibility(View.GONE);
+//        q3.setVisibility(View.GONE);
+//        q4.setVisibility(View.GONE);
+//        q5.setVisibility(View.GONE);
+//        q6.setVisibility(View.GONE);
 
         name.setText("Hey, "+db.getString("name"));
+
+        next.setOnClickListener(v-> {
+
+            if(quetsion == 1) {
+
+//                a2.setVisibility(View.VISIBLE);
+//                q2.setVisibility(View.VISIBLE);
+                scrollView.scrollTo(0, (int) q2.getY());
+                quetsion++;
+
+            } else if (quetsion == 2) {
+
+//                a3.setVisibility(View.VISIBLE);
+//                q3.setVisibility(View.VISIBLE);
+                scrollView.scrollTo(0, (int) q3.getY());
+                quetsion++;
+
+            } else if (quetsion == 3) {
+
+//                a4.setVisibility(View.VISIBLE);
+//                q4.setVisibility(View.VISIBLE);
+                scrollView.scrollTo(0, (int) q4.getY());
+                quetsion++;
+
+            } else if (quetsion == 4) {
+
+//                a5.setVisibility(View.VISIBLE);
+//                q5.setVisibility(View.VISIBLE);
+                scrollView.scrollTo(0, (int) q5.getY());
+                quetsion++;
+
+            } else {
+
+//                a6.setVisibility(View.VISIBLE);
+//                q6.setVisibility(View.VISIBLE);
+                next.setText("Complete");
+                scrollView.scrollTo(0, (int) q6.getY());
+                quetsion++;
+
+            }
+
+        });
 
     }
 
