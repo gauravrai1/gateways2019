@@ -30,6 +30,7 @@ public class Question extends AppCompatActivity {
     TextView a31, a32, a33;
     TextView a41, a42, a43, a44, a45;
     TextView a51, a52, a53, a54, a55;
+    String trait = "happy";
     TextView next;
     SeekBar a2;
     int ans1 = 1, ans3 = 2, ans4 = 3, ans5 = 1, ans6 = 1;
@@ -122,6 +123,7 @@ public class Question extends AppCompatActivity {
 
             if(quetsion == 1) {
 
+                q2.setText("How "+trait+" are you feeling?");
                 scrollView.scrollTo(0, (int) q2.getY());
                 quetsion++;
 
@@ -175,110 +177,123 @@ public class Question extends AppCompatActivity {
 
         aa1.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 6;
+            trait = "happpy";
 
         });
 
         aa2.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 7;
+            trait = "okay";
 
         });
 
         aa3.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 3;
+            trait = "bored";
 
         });
 
         aa4.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 5;
+            trait = "excited";
 
         });
 
         aa5.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 0;
+            trait = "afraid";
 
         });
 
         aa6.setOnClickListener(v-> {
 
             ans1 = 1;
+            trait = "loving";
 
         });
 
         aa7.setOnClickListener(v-> {
 
             ans1 = 1;
+            trait = "calm";
 
         });
 
         aa8.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 2;
+            trait = "anxious";
 
         });
 
         aa9.setOnClickListener(v-> {
 
             ans1 = 1;
+            trait = "confident";
 
         });
 
         aa10.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 9;
+            trait = "tired";
 
         });
 
         aa11.setOnClickListener(v-> {
 
             ans1 = 1;
+            trait = "guilty";
 
         });
 
         aa12.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 8;
+            trait = "sad";
 
         });
 
         aa13.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 4;
+            trait = "depressed";
 
         });
 
 
         a21.setOnClickListener(v-> {
 
-            ans3 = 1;
+            ans3 = 6;
 
         });
 
         a22.setOnClickListener(v-> {
 
-            ans3 = 1;
+            ans3 = 0;
 
         });
 
         a23.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 2;
 
         });
 
         a24.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 5;
 
         });
 
         a25.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 6;
 
         });
 
@@ -321,32 +336,32 @@ public class Question extends AppCompatActivity {
 
         a32.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 0;
 
         });
 
         a33.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 2;
 
         });
 
 
         a41.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 0;
 
         });
 
         a42.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 2;
 
         });
 
         a43.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 3;
 
         });
 
@@ -358,26 +373,26 @@ public class Question extends AppCompatActivity {
 
         a45.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 4;
 
         });
 
 
         a51.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 0;
 
         });
 
         a52.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 2;
 
         });
 
         a53.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 3;
 
         });
 
@@ -389,7 +404,7 @@ public class Question extends AppCompatActivity {
 
         a55.setOnClickListener(v-> {
 
-            ans1 = 1;
+            ans1 = 4;
 
         });
 

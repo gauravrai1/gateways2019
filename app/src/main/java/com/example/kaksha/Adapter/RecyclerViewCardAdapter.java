@@ -59,7 +59,7 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
 
         if(position == 0) {
 
-            holder.text.setText("Go away you retard!");
+            holder.text.setText("Let's begin today's task");
 
         } else {
 
