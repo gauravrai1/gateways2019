@@ -150,25 +150,31 @@ public class Question extends AppCompatActivity {
 
             } else {
 
-                api.requestAnxietyData(ans1 +","+ans3+","+ans4 +","+ans5+","+ans6).enqueue(new Callback<TestReponse>() {
-                    @Override
-                    public void onResponse(Call<TestReponse> call, Response<TestReponse> response) {
+                startActivity(new Intent(Question.this, Recommendations.class));
+                finish();
 
-                        if(response.isSuccessful()) {
-
-                            db.putString("anxiety",response.body().getSocial_anxiety());
-                            startActivity(new Intent(Question.this, Home.class));
-                            finish();
-
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<TestReponse> call, Throwable t) {
-
-                    }
-                });
+//                api.requestAnxietyData(ans1 +","+ans3+","+ans4 +","+ans5+","+ans6).enqueue(new Callback<TestReponse>() {
+//                    @Override
+//                    public void onResponse(Call<TestReponse> call, Response<TestReponse> response) {
+//
+//                        if(response.isSuccessful()) {
+//
+//                            db.putString("anxiety",response.body().getSocial_anxiety());
+//                            startActivity(new Intent(Question.this, Home.class));
+//                            finish();
+//
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<TestReponse> call, Throwable t) {
+//
+//                        startActivity(new Intent(Question.this, Home.class));
+//                        finish();
+//
+//                    }
+//                });
 
             }
 

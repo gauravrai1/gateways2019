@@ -48,6 +48,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         TextView name = findViewById(R.id.name);
         name.setText(db.getString("name"));
+
+        findViewById(R.id.textView).setOnClickListener(v-> {
+
+            startActivity(new Intent(Home.this, Question.class));
+            finish();
+
+        });
     }
 
     @Override

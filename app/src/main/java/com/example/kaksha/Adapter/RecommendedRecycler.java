@@ -2,9 +2,12 @@ package com.example.kaksha.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,7 +54,13 @@ public class RecommendedRecycler extends RecyclerView.Adapter<RecommendedRecycle
         Recommended card = cards.get(position);
 
         if(position == 0) {
-            holder.text.setText("Go away you retard!");
+            holder.text.setText("Let me show you a helpful video.");
+            holder.text.setOnClickListener(v-> {
+
+                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=HqSoxMOrVeE")));
+                
+
+            });
         } else {
             holder.text.setText(card.getTitle());
         }
@@ -72,10 +81,12 @@ public class RecommendedRecycler extends RecyclerView.Adapter<RecommendedRecycle
     //View holder class, where all view components are defined
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView text;
+        private ImageView imageView;
         public MyViewHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
             text = itemView.findViewById(R.id.text);
+            imageView = itemView.findViewById(R.id.imageView);
         }
 
         @SuppressLint("NewApi")

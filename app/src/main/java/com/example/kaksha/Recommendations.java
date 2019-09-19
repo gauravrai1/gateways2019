@@ -40,9 +40,9 @@ public class Recommendations extends AppCompatActivity implements View.OnClickLi
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Recommendations.this, LinearLayoutManager.HORIZONTAL, false);
         allextras.setLayoutManager(linearLayoutManager);
         adapter = new RecommendedRecycler(Recommendations.this);
-        cards.add(new Recommended("Hey"));
-        cards.add(new Recommended("Good morning"));
-        cards.add(new Recommended("Cheerful Vibes"));
+        cards.add(new Recommended("Play"));
+        cards.add(new Recommended("Movie"));
+        cards.add(new Recommended("Video"));
         cards.add(new Recommended("Let's play a game?"));
         adapter.setListContent(cards);
         allextras.setAdapter(adapter);
