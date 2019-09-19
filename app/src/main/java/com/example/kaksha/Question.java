@@ -2,6 +2,8 @@ package com.example.kaksha;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -9,7 +11,15 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.kaksha.API.Models.Request.TestRequest;
+import com.example.kaksha.API.Models.Response.TestReponse;
+import com.example.kaksha.API.Services.ApiClient;
+import com.example.kaksha.API.Services.ApiInterface;
 import com.example.kaksha.DB.TinyDB;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Question extends AppCompatActivity {
 
@@ -22,10 +32,13 @@ public class Question extends AppCompatActivity {
     TextView a51, a52, a53, a54, a55;
     TextView next;
     SeekBar a2;
+    int ans1 = 1, ans3 = 2, ans4 = 3, ans5 = 1, ans6 = 1;
     ScrollView scrollView;
     int quetsion = 1;
     private TinyDB db;
+    ApiInterface api;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,62 +46,15 @@ public class Question extends AppCompatActivity {
 
         db = new TinyDB(Question.this);
 
+        //Initialising Retrofit Interface
+        api = ApiClient.getClient().create(ApiInterface.class);
+
+
         setViews();
 
-//        a2.setVisibility(View.GONE);
-//        a3.setVisibility(View.GONE);
-//        a4.setVisibility(View.GONE);
-//        a5.setVisibility(View.GONE);
-//        a6.setVisibility(View.GONE);
-//        q2.setVisibility(View.GONE);
-//        q3.setVisibility(View.GONE);
-//        q4.setVisibility(View.GONE);
-//        q5.setVisibility(View.GONE);
-//        q6.setVisibility(View.GONE);
+        setOnClicks();
 
         name.setText("Hey, "+db.getString("name"));
-
-        next.setOnClickListener(v-> {
-
-            if(quetsion == 1) {
-
-//                a2.setVisibility(View.VISIBLE);
-//                q2.setVisibility(View.VISIBLE);
-                scrollView.scrollTo(0, (int) q2.getY());
-                quetsion++;
-
-            } else if (quetsion == 2) {
-
-//                a3.setVisibility(View.VISIBLE);
-//                q3.setVisibility(View.VISIBLE);
-                scrollView.scrollTo(0, (int) q3.getY());
-                quetsion++;
-
-            } else if (quetsion == 3) {
-
-//                a4.setVisibility(View.VISIBLE);
-//                q4.setVisibility(View.VISIBLE);
-                scrollView.scrollTo(0, (int) q4.getY());
-                quetsion++;
-
-            } else if (quetsion == 4) {
-
-//                a5.setVisibility(View.VISIBLE);
-//                q5.setVisibility(View.VISIBLE);
-                scrollView.scrollTo(0, (int) q5.getY());
-                quetsion++;
-
-            } else {
-
-//                a6.setVisibility(View.VISIBLE);
-//                q6.setVisibility(View.VISIBLE);
-                next.setText("Complete");
-                scrollView.scrollTo(0, (int) q6.getY());
-                quetsion++;
-
-            }
-
-        });
 
     }
 
@@ -145,6 +111,288 @@ public class Question extends AppCompatActivity {
         a53 = findViewById(R.id.a53);
         a54 = findViewById(R.id.a54);
         a55 = findViewById(R.id.a55);
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void setOnClicks() {
+
+
+        next.setOnClickListener(v-> {
+
+            if(quetsion == 1) {
+
+                scrollView.scrollTo(0, (int) q2.getY());
+                quetsion++;
+
+            } else if (quetsion == 2) {
+
+                scrollView.scrollTo(0, (int) q3.getY());
+                quetsion++;
+
+            } else if (quetsion == 3) {
+
+                scrollView.scrollTo(0, (int) q4.getY());
+                quetsion++;
+
+            } else if (quetsion == 4) {
+
+                scrollView.scrollTo(0, (int) q5.getY());
+                quetsion++;
+
+            } else if (quetsion == 5) {
+
+                next.setText("Complete");
+                scrollView.scrollTo(0, (int) q6.getY());
+                quetsion++;
+
+            } else {
+
+                api.requestAnxietyData(ans1 +","+ans3+","+ans4 +","+ans5+","+ans6).enqueue(new Callback<TestReponse>() {
+                    @Override
+                    public void onResponse(Call<TestReponse> call, Response<TestReponse> response) {
+
+                        if(response.isSuccessful()) {
+
+                            db.putString("anxiety",response.body().getSocial_anxiety());
+                            startActivity(new Intent(Question.this, Home.class));
+                            finish();
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<TestReponse> call, Throwable t) {
+
+                    }
+                });
+
+            }
+
+        });
+
+
+        aa1.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa2.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa3.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa4.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa5.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa6.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa7.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa8.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa9.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa10.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa11.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa12.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        aa13.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+
+        a21.setOnClickListener(v-> {
+
+            ans3 = 1;
+
+        });
+
+        a22.setOnClickListener(v-> {
+
+            ans3 = 1;
+
+        });
+
+        a23.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a24.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a25.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a26.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a27.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a28.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a29.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a210.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+
+        a31.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a32.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a33.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+
+        a41.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a42.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a43.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a44.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a45.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+
+        a51.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a52.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a53.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a54.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
+        a55.setOnClickListener(v-> {
+
+            ans1 = 1;
+
+        });
+
 
     }
 
