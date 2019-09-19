@@ -96,6 +96,7 @@
             app:srcCompat="@drawable/icon_pen" />
 
         <ImageView
+            android:id="@+id/allextras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
