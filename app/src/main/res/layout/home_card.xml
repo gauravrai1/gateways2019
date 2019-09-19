@@ -28,6 +28,7 @@
             app:srcCompat="@drawable/icon_love" />
 
         <TextView
+            android:id="@+id/text"
             android:alpha="0.7"
             android:layout_marginTop="15dp"
             android:textColor="@color/white"

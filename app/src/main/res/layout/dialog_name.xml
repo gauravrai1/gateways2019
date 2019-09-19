@@ -16,6 +16,7 @@
         android:layout_height="50dp">
 
         <TextView
+            android:fontFamily="sans-serif-light"
             android:id="@+id/title"
             android:textStyle="bold"
             android:textSize="17sp"
@@ -28,23 +29,23 @@
 
     </RelativeLayout>
 
-
-
     <LinearLayout
         android:layout_marginTop="40dp"
         android:padding="25dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editor"
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/edit_text_grey"
+            android:id="@+id/name"
             android:gravity="start"
-            android:minLines="2"
+            android:minLines="1"
             android:hint="Your name"
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
-            android:maxLines="5"
+            android:maxLines="1"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:layout_marginBottom="10dp"
@@ -52,6 +53,8 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:fontFamily="sans-serif-medium"
+            android:alpha="0.8"
             android:layout_centerInParent="true"
             android:layout_weight="1"
             android:id="@+id/save"

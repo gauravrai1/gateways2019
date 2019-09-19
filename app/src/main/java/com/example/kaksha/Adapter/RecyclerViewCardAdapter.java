@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.kaksha.DB.TinyDB;
 import com.example.kaksha.Model.Card;
 import com.example.kaksha.R;
 
@@ -23,6 +24,7 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
     private View view;
     private RecyclerViewCardAdapter.MyViewHolder holder;
     private Context context;
+    private TinyDB db;
 
     //Context setting Function
     public RecyclerViewCardAdapter(Context context) {
@@ -31,6 +33,8 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
 
             this.context = context;
             inflater = LayoutInflater.from(context);
+
+            db = new TinyDB(context);
 
         }
 
@@ -53,6 +57,16 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
         //Fetching Data
         Card card = cards.get(position);
 
+        if(position == 0) {
+
+            holder.text.setText("Go away you retard!");
+
+        } else {
+
+            holder.text.setText(card.getTitle());
+
+        }
+
     }
 
     //Setting the arrayList
@@ -72,10 +86,14 @@ public class RecyclerViewCardAdapter extends RecyclerView.Adapter<RecyclerViewCa
     //View holder class, where all view components are defined
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        private TextView text;
+
         public MyViewHolder(View itemView) {
 
             super(itemView);
             itemView.setOnClickListener(this);
+
+            text = itemView.findViewById(R.id.text);
 
         }
 
