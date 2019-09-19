@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kaksha.Adapter.RecyclerViewCardAdapter;
@@ -14,12 +17,13 @@ import com.example.kaksha.Model.Card;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView recyclerView;
     private RecyclerViewCardAdapter adapter;
     private List<Card> cards = new ArrayList<>();
     private TinyDB db;
+    private ImageView allextras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         recyclerView = findViewById(R.id.recyclerView);
+        allextras = findViewById(R.id.allextras);
+        allextras.setOnClickListener(this);
 
         db = new TinyDB(Home.this);
 
@@ -42,7 +48,15 @@ public class Home extends AppCompatActivity {
 
         TextView name = findViewById(R.id.name);
         name.setText(db.getString("name"));
+    }
 
+    @Override
+    public void onClick(View v) {
+        if (v == allextras) {
+            Intent i = new Intent(Home.this, Recommendations.class);
+            finish();
+            startActivity(i);
+        }
     }
 
 }
